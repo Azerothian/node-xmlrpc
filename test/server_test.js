@@ -16,7 +16,7 @@ vows.describe('Server').addBatch({
         // Waits briefly to give the server time to start up and start listening
         setTimeout(function () {
           var options = { host: 'localhost', port: 9005, path: '/' }
-          var client = new Client(options, false)
+          var client = new Client(options)
           client.methodCall('testMethod', null, function() { })
         }, 500)
       }
@@ -34,7 +34,7 @@ vows.describe('Server').addBatch({
         // Waits briefly to give the server time to start up and start listening
         setTimeout(function () {
           var options = { host: 'localhost', port: 9999, path: '/' }
-          var client = new Client(options, false)
+          var client = new Client(options)
           client.methodCall('testMethod', null, function() { })
         }, 500)
       }
@@ -93,7 +93,7 @@ vows.describe('Server').addBatch({
         server.on('NotFound', this.callback)
         setTimeout(function () {
           var options = { host: 'localhost', port: 9996, path: '/' }
-          var client = new Client(options, false)
+          var client = new Client(options)
           client.methodCall('testMethod', null, function() { })
         }, 500)
       }
